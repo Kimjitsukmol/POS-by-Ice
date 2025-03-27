@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <title>POS Offline (UI แบบเรียบหรู)</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <div class="left-pane">
+    <div id="datetime">
+      <div class="date"></div>
+      <div class="time"></div>
+    </div>
+
+    <h2>ร้านเจ้พิน</h2>
+    <input type="file" id="excelFile" accept=".xlsx">
+
+    <div id="controls">
+      <input type="text" id="productCode" placeholder="กรอกรหัสสินค้า">
+      <label>รับเงิน:</label>
+      <input type="number" id="received" oninput="calculateChange()">
+      <button id="clearAll" onclick="clearAll()">ล้างทั้งหมด</button>
+	  <button onclick="showReceiptHistory()">ดูใบเสร็จย้อนหลัง</button>
+    </div>
+    
+    <table id="productTable">
+      <thead>
+        <tr>
+          <th>รหัสสินค้า</th>
+          <th>ชื่อสินค้า</th>
+          <th>จำนวน</th>
+          <th>ราคา</th>
+          <th>ลบ</th>
+        </tr>
+      </thead>
+      <tbody id="productBody" class="striped"></tbody>
+    </table>
+	<button id="showTodayBtn" style="position: relative; bottom: -350px; left: 0px; z-index: 800;">ดูยอดวันนี้</button>
+  </div>
+
+  <div class="right-pane">
+    <div class="summary-box" style="background-color: #34495e; color: white;">
+      <div class="small-top" id="totalQty">จำนวน: 0</div>
+      <div class="big-center" id="totalPrice">฿0.00</div>
+    </div>
+
+    <div id="changeBox" style="background-color: #34495e; color: white;">
+      <div class="small-top">เงินทอน</div>
+      <div class="big-center" id="changeAmount">฿0.00</div>
+    </div>
+
+    <div class="calendar-summary-box">
+      <strong>เลือกวันเพื่อดูยอดขาย:</strong>
+      <input type="text" id="calendar" placeholder="เลือกวัน" style="width: 60px; height: 22px; font-size: 11px;">
+      <div id="selectedTotal">ยอดรวม: ฿0.00</div>
+    </div>
+
+    <div class="today-summary-box" id="todaySummaryBox">
+      <strong>รวมยอดวันนี้:</strong>
+      <div id="todayTotal">฿0.00</div>
+    </div>
+  </div>
+  
+
+</body>
+
+
+</html>

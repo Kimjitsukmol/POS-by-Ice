@@ -1,0 +1,226 @@
+body {
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.left-pane {
+  background-color: #f0f4f8; /* สีอ่อน */
+  width: 70%;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.right-pane {
+  background-color: #2c3e50; /* สีเข้ม */
+  width: 30%;
+  padding: 30px;
+  color: white;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+#datetime {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 28px;
+  text-align: left;
+  color: #2c3e50;
+}
+
+#datetime .time {
+  font-size: 22px;
+  color: #555;
+}
+
+h2 {
+  color: #1f3c88;
+}
+
+input,
+button {
+  padding: 10px;
+  margin: 10px 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+#controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#tableContainer {
+  max-height: 500px;
+  overflow-y: auto;
+  margin-top: 20px;
+}
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  height: 10px;
+}
+
+th {
+  background-color: #d9eaf7;
+  color: #333;
+}
+
+#productTable td,
+#productBody tr:nth-child(even) {
+  background-color: #f0f4f8;
+}
+
+#productBody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+#productBody tr:hover {
+  background-color: #d0ebff;
+}
+
+
+
+
+#productTable input[type="number"] {
+  height: 15px;
+  font-size: 12px;
+  padding: 3px 6px;
+}
+
+.summary-box,
+#changeBox,
+.today-summary-box,
+.calendar-summary-box {
+  position: fixed;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  z-index: 800;
+}
+
+.summary-box {
+  top: 20px;
+  right: 70px;
+  width: 300px;
+}
+
+#changeBox {
+  top: 240px;
+  right: 70px;
+  width: 300px;
+}
+
+.today-summary-box {
+  display: none;
+  bottom: 20px;
+  left: 20px;
+  width: 100px;
+  font-size: 16px;
+  color: #333;
+}
+
+.calendar-summary-box {
+  bottom: 10px;
+  right: 40px;
+  width: 100px;
+  font-size: 12px;
+  color: #333;
+}
+
+.summary-box .small-top,
+#changeBox .small-top {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.summary-box .big-center,
+#changeBox .big-center {
+  font-size: 45px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 2px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+#clearAll {
+  float: right;
+  margin-top: 10px;
+}
+
+.flatpickr-calendar {
+  transform: scale(0.8);
+  font-size: 10px;
+}
+
+input#productCode,
+input#received {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+input#productCode:focus,
+input#received:focus {
+  transform: scale(1.2);
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+  z-index: 1000;
+}
+
+.summary-box.animate-grow {
+  transform: scale(1.4);
+  box-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+}
+
+.summary-box.animate-shrink {
+  transform: scale(0.7);
+  opacity: 0.8;
+}
+
+
+
+
